@@ -1,230 +1,154 @@
-🏨 OccuRate
+# 🏨 OccuRate — Hotel Revenue & Occupancy Analytics (India)
 
-Revenue Intelligence for India's Hospitality Industry
+**Turning 982 OYO listings across 10 Indian cities into a pricing and occupancy strategy — not just a chart pack.**
 
-A business analytics case study demonstrating how data can improve hotel pricing, occupancy, and revenue management across India's hospitality market.
+![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-EDA-150458?logo=pandas&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Complete-2E8B57)
+![Domain](https://img.shields.io/badge/Domain-Hospitality%20%2F%20Revenue%20Management-0A3D62)
 
+---
 
+## TL;DR
 
-Executive Summary
+- **982 hotel listings** across **10 cities** and **4 room tiers**, cleaned from a genuinely messy raw export (currency symbols, "No reviews" strings, percentage text, inconsistent casing).
+- Core finding: **price and rating are almost uncorrelated** — guests are paying for perceived value and location, not a premium tier. Revenue strategy should follow that signal, not fight it.
+- Deliverable is a full analyst workflow: raw → cleaned dataset → EDA → segmentation-ready insights → pricing and occupancy recommendations a revenue manager could act on.
 
-Pricing is one of the most influential drivers of hotel profitability. Setting room prices too high can reduce occupancy, while underpricing leaves revenue unrealized.
+---
 
-OccuRate explores hotel listing data from major Indian cities to understand how location, customer ratings, reviews, and market positioning influence pricing. Using Python-based exploratory data analysis, this project transforms raw data into business insights that can support revenue management, pricing strategy, and market planning.
+## Business Problem
 
-This repository is designed as a business case study rather than a coding exercise, demonstrating an end-to-end analytical approach from data preparation to executive recommendations.
+Independent and budget-hotel operators (the OYO model) compete on volume, not brand premium. The commercial questions that matter to a revenue manager are simple to ask and hard to answer without structured data:
 
-Business Context
+- Where is pricing power actually coming from — city, room type, or location within a city?
+- Does raising price come at the cost of rating or reviews, or is the market indifferent?
+- Which segments are under-priced relative to demand, and which are over-discounted?
+- Where should marketing and inventory investment go to move occupancy, not just prices?
 
-Revenue management in hospitality requires balancing occupancy, pricing, customer satisfaction, and competitive positioning. Modern hotel operators increasingly rely on analytics to guide commercial decisions rather than intuition alone.
+This project treats the OYO India listings dataset as a stand-in for that operator's portfolio and answers those questions end to end.
 
-OccuRate demonstrates how descriptive analytics can help identify pricing opportunities and reveal market behaviour before moving to predictive or optimization models.
+---
 
-Business Challenge
+## Objectives
 
-Key questions addressed in this analysis include:
+1. Quantify how price varies by city, area, and room type.
+2. Test whether rating and reviews actually explain price — or whether the market is pricing on something else.
+3. Identify which price/room-type segments carry the most listings (i.e., where the real market is).
+4. Convert the above into pricing and occupancy recommendations, not just descriptive charts.
 
-Which cities command the strongest pricing power?
+---
 
-How does customer perception influence pricing?
+## Dataset
 
-Does review volume correlate with higher room rates?
+**982 listings, 10 columns**, scraped-style OYO data across Mumbai, Delhi, Bangalore, Chennai, Hyderabad, Pune, Kolkata, Ahmedabad, Jaipur, and Goa.
 
-Which market segments represent the largest commercial opportunity?
+| Column | Description |
+|---|---|
+| `hotel_id`, `hotel_name` | Listing identifiers |
+| `city`, `area` | Location (city + locality, e.g. MG Road, Whitefield, Connaught Place) |
+| `room_type` | Classic, Deluxe, Suite, Premium |
+| `price` | Nightly rate (₹) |
+| `rating` | Customer rating, 1–5 |
+| `reviews` | Review count |
+| `discount` | Discount applied (%) |
+| `availability_365` | Days available per year |
 
-What pricing strategies could improve occupancy without sacrificing revenue?
+**The raw file was not analysis-ready**, which is itself part of the case study: prices arrived as `₹6214`, `8273 INR`, and plain numbers in the same column; review counts contained the literal string `"No reviews"`; room types were inconsistently cased (`Deluxe` / `DELUXE` / `deluxe`); discounts mixed `"43%"` strings with raw numbers. Cleaning this into the 982-row analysis-ready table was a deliberate first step, not an afterthought — see `Python_Notebook/Indain_Hotels_Analysis.ipynb` for the full cleaning logic.
 
-Project Objectives
+---
 
-Analyze pricing trends across Indian cities.
+## Methodology
 
-Evaluate relationships between ratings, reviews, and price.
+1. **Data Cleaning** — strip currency symbols/suffixes, coerce numeric types, standardize categorical casing, resolve `"No reviews"` → `0`, handle missing values.
+2. **Univariate Analysis** — distribution of price, rating, reviews, discount, availability.
+3. **Bivariate Analysis** — price vs. city, price vs. room type, price vs. rating, reviews vs. price.
+4. **Multivariate Analysis** — correlation structure across all numeric features.
+5. **Segment Sizing** — where listing volume concentrates (city, room type, price band).
+6. **Business Recommendations** — pricing, discounting, and occupancy actions tied back to the above.
 
-Identify market segments and pricing behaviour.
+---
 
-Translate analytical findings into business recommendations.
+## Tech Stack
 
-Demonstrate stakeholder-focused data storytelling.
+| Layer | Tools |
+|---|---|
+| Language | Python |
+| Data wrangling | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| Environment | Jupyter Notebook |
 
-Dataset Overview
+---
 
-The dataset contains hotel listings with attributes such as:
+## Key Visualizations
 
-Hotel Name
+### Price Distribution
+![Price Distribution](images/price_distribution.png)
 
-City
+### Average Price by City
+![Price by City](images/price_by_city.png)
 
-Area
+### Price vs. Rating
+![Price vs Rating](images/price_vs_rating.png)
 
-Room Price
+### Reviews vs. Price
+![Reviews vs Price](images/reviews_vs_price.png)
 
-Customer Rating
+### Correlation Heatmap
+![Correlation Heatmap](images/correlation_heatmap.png)
 
-Review Count
+---
 
-Room Category
+## Key Insights
 
-Discounts
+- **Location and room type drive price far more than rating does.** Price varies meaningfully by city and tier, but shows a weak correlation with rating across the full dataset — guests aren't paying a premium purely for a higher star rating.
+- **Deluxe and Classic listings dominate the market** (327 and 323 of 982 listings respectively), with Suite and Premium making up a smaller, more niche share — confirming this is fundamentally a budget/mid-market, not a luxury, market.
+- **Discounting is concentrated in the mid-tier**, used as an occupancy lever rather than applied uniformly.
+- **High-review listings cluster at moderate price points**, suggesting that perceived value, not lowest price, is what drives repeat engagement.
+- **Premium-priced outliers exist in every city**, functioning as a separate niche segment rather than the top of a single continuous pricing curve.
 
-Availability
+---
 
-Technology Stack
+## Business Recommendations
 
-Category
+- **Price by segment, not by brand.** City + room type explains more price variance than any single "premium" positioning would — pricing strategy should be localized, not blanket.
+- **Protect the Deluxe/Classic core.** These two tiers carry the majority of listings; occupancy and revenue programs should prioritize them over chasing Premium-tier volume.
+- **Target discounts, don't spread them.** Concentrate promotional spend on mid-tier listings with low availability turnover, where a discount is most likely to convert to a booked night.
+- **Treat Premium/Suite as a distinct product**, not a scaled-up version of Classic/Deluxe — separate pricing, marketing, and guest-experience investment.
+- **Invest in review generation in high-traffic areas** (e.g., MG Road, Connaught Place, Airport Road clusters) since review volume — not just rating — correlates with sustained demand.
 
-Tools
+---
 
-Programming
+## Limitations & Next Steps
 
-Python
+- The dataset is a single snapshot; there's no time dimension, so seasonality and demand trends aren't modeled here.
+- `rating` has an unusually high concentration at one value (3.6) after cleaning, which likely reflects imputation in the source data rather than true guest behavior — flagged here rather than hidden, and worth revisiting if a cleaner source becomes available.
+- Natural next step: layer in a time-series or booking-window dimension to move from *descriptive* pricing insight toward a *predictive* occupancy/demand model.
 
-Data Processing
+---
 
-Pandas, NumPy
+## Repository Structure
 
-Visualization
-
-Matplotlib
-
-Development
-
-Jupyter Notebook
-
-Analytics Workflow
-
-Raw Dataset
-     │
-     ▼
-Data Cleaning
-     │
-     ▼
-Exploratory Data Analysis
-     │
-     ▼
-Pattern Discovery
-     │
-     ▼
-Business Insights
-     │
-     ▼
-Strategic Recommendations
-
-Key Insights
-
-📍 Metropolitan Markets Show Stronger Pricing Power
-
-Premium pricing is concentrated in major cities, suggesting stronger demand and greater willingness to pay.
-
-Business implication: Pricing strategies should be tailored by geography rather than applied uniformly.
-
-⭐ Ratings Alone Do Not Explain Premium Pricing
-
-Higher-rated hotels are not consistently the most expensive, indicating that factors such as location, brand positioning, and demand also influence price.
-
-Business implication: Pricing decisions should combine multiple commercial indicators.
-
-💬 Customer Engagement Supports Commercial Performance
-
-Hotels receiving greater customer engagement through reviews generally display stronger pricing consistency.
-
-Business implication: Customer experience initiatives can indirectly strengthen pricing power.
-
-💰 Mid-Market Properties Represent the Largest Opportunity
-
-The majority of listings fall within affordable and mid-range price segments.
-
-Business implication: Revenue optimization initiatives in this segment may produce the greatest aggregate impact.
-
-Strategic Recommendations
-
-Implement city-specific pricing strategies.
-
-Monitor competitor pricing continuously.
-
-Increase focus on customer review acquisition.
-
-Replace blanket discounts with targeted promotions.
-
-Use analytics to support seasonal pricing decisions.
-
-Benchmark pricing by hotel segment and location.
-
-Business Impact
-
-This project illustrates how descriptive analytics can support:
-
-Revenue Management
-
-Dynamic Pricing
-
-Market Expansion Planning
-
-Customer Experience Analysis
-
-Competitive Benchmarking
-
-Executive Decision Support
-
-Repository Structure
-
-OccuRate/
+```
+OccuRate-Hotel-Revenue-Optimization-Occupancy-Analytics/
 ├── Data/
-├── Notebook/
-├── Images/
+│   ├── oyo_india_hotels_raw.csv
+│   └── oyo_india_hotels_cleaned.csv
+├── Python_Notebook/
+│   └── Indain_Hotels_Analysis.ipynb
+├── images/
 └── README.md
+```
 
-Skills Demonstrated
+---
 
-Technical
+## Author
 
-Python
+**Md Yusuf**
+Data Analyst | Revenue · Margin · Category Analytics | SQL · Power BI · Python
 
-Pandas
+🔗 [GitHub — Yusufmd24](https://github.com/Yusufmd24) · Portfolio: [yusufmd24.github.io](https://yusufmd24.github.io)
 
-NumPy
+Part of a broader portfolio applying commercial and P&L judgment to structured data problems — see also the [SaaS Metrics Intelligence Dashboard](https://github.com/Yusufmd24/SaaS-Metrics-Intelligence-Dashboard) for a full-stack SQL + Power BI case study.
 
-Matplotlib
-
-Jupyter Notebook
-
-Analytical
-
-Exploratory Data Analysis
-
-Data Cleaning
-
-Statistical Interpretation
-
-Business Analytics
-
-Data Storytelling
-
-Insight Generation
-
-Future Enhancements
-
-Interactive Power BI dashboard
-
-Pricing segmentation model
-
-Demand forecasting
-
-Occupancy prediction
-
-Revenue optimization simulation
-
-About Me
-
-I'm an aspiring Data Analyst focused on solving business problems through data. My portfolio combines Python, SQL, Power BI, and Excel to deliver stakeholder-focused insights and practical business recommendations.
-
-Connect
-
-If you found this project useful:
-
-⭐ Star this repository
-
-🍴 Fork the project
-
-💼 Connect with me on LinkedIn
-
-Turning raw data into business decisions.
+⭐ If this was useful, a star is appreciated.

@@ -1,84 +1,60 @@
-🏨 OccuRate: Hotel Revenue Optimization & Occupancy Analytics
+🏨 OccuRate
 
-A business analytics case study demonstrating how exploratory data analysis can uncover pricing opportunities, demand patterns, and revenue optimization strategies in India's hospitality industry.
+Revenue Intelligence for India's Hospitality Industry
+
+A business analytics case study demonstrating how data can improve hotel pricing, occupancy, and revenue management across India's hospitality market.
 
 
 
 Executive Summary
 
-Pricing is one of the strongest levers influencing occupancy, profitability, and long-term competitiveness in the hospitality industry. Hotels frequently struggle to balance room rates with customer demand while remaining competitive in dynamic local markets.
+Pricing is one of the most influential drivers of hotel profitability. Setting room prices too high can reduce occupancy, while underpricing leaves revenue unrealized.
 
-OccuRate analyzes hotel listing data across major Indian cities to identify the factors influencing hotel pricing and customer demand. Through data cleaning, exploratory analysis, statistical comparisons, and business storytelling, the project converts raw data into insights that can support pricing strategy, revenue optimization, and occupancy improvement.
+OccuRate explores hotel listing data from major Indian cities to understand how location, customer ratings, reviews, and market positioning influence pricing. Using Python-based exploratory data analysis, this project transforms raw data into business insights that can support revenue management, pricing strategy, and market planning.
 
-Rather than focusing only on charts, this project demonstrates how data can be translated into decisions that stakeholders can act upon.
+This repository is designed as a business case study rather than a coding exercise, demonstrating an end-to-end analytical approach from data preparation to executive recommendations.
 
-Business Problem
+Business Context
 
-Hotel operators must answer critical commercial questions:
+Revenue management in hospitality requires balancing occupancy, pricing, customer satisfaction, and competitive positioning. Modern hotel operators increasingly rely on analytics to guide commercial decisions rather than intuition alone.
 
-Are rooms priced appropriately for each market?
+OccuRate demonstrates how descriptive analytics can help identify pricing opportunities and reveal market behaviour before moving to predictive or optimization models.
 
-Which cities generate the strongest pricing power?
+Business Challenge
 
-Do customer ratings justify premium pricing?
+Key questions addressed in this analysis include:
 
-Does customer engagement influence revenue potential?
+Which cities command the strongest pricing power?
 
-Which market segments present the greatest opportunity?
+How does customer perception influence pricing?
 
-Without data-driven pricing strategies, hotels risk:
+Does review volume correlate with higher room rates?
 
-Revenue leakage through underpricing
+Which market segments represent the largest commercial opportunity?
 
-Reduced occupancy caused by overpricing
-
-Inefficient promotional campaigns
-
-Poor investment decisions
-
-Weak competitive positioning
+What pricing strategies could improve occupancy without sacrificing revenue?
 
 Project Objectives
 
-This analysis was designed to answer the following business questions:
+Analyze pricing trends across Indian cities.
 
-Identify pricing trends across Indian cities.
+Evaluate relationships between ratings, reviews, and price.
 
-Evaluate how ratings influence pricing.
+Identify market segments and pricing behaviour.
 
-Measure the relationship between customer reviews and pricing.
+Translate analytical findings into business recommendations.
 
-Understand the distribution of hotel market segments.
-
-Discover geographic pricing patterns.
-
-Recommend strategies to improve occupancy and revenue.
-
-Business Value
-
-This project demonstrates how analytics can support:
-
-Revenue Management
-
-Dynamic Pricing Strategy
-
-Market Expansion Planning
-
-Customer Experience Analysis
-
-Competitive Benchmarking
-
-Business Decision Support
+Demonstrate stakeholder-focused data storytelling.
 
 Dataset Overview
 
-The dataset contains hotel listings across multiple Indian cities with attributes including:
+The dataset contains hotel listings with attributes such as:
 
 Hotel Name
 
 City
 
-Location
+Area
 
 Room Price
 
@@ -110,111 +86,96 @@ Visualization
 
 Matplotlib
 
-Environment
+Development
 
 Jupyter Notebook
 
-Analytical Workflow
+Analytics Workflow
 
-1. Data Preparation
-
-Data quality assessment
-
-Missing value treatment
-
-Duplicate removal
-
-Data type correction
-
-Feature validation
-
-↓
-
-2. Exploratory Data Analysis
-
-Price distribution
-
-Rating analysis
-
-Customer review analysis
-
-City-wise comparison
-
-Segment analysis
-
-↓
-
-3. Relationship Analysis
-
-Price vs Rating
-
-Reviews vs Price
-
-Correlation analysis
-
-Distribution analysis
-
-↓
-
-4. Business Interpretation
-
-Transform statistical observations into practical business recommendations.
-
-Key Performance Questions
-
-This project investigates:
-
-Which cities command premium pricing?
-
-Which hotel segments dominate the market?
-
-Do higher ratings consistently justify higher prices?
-
-Does customer engagement correlate with pricing?
-
-Where are opportunities for revenue optimization?
+Raw Dataset
+     │
+     ▼
+Data Cleaning
+     │
+     ▼
+Exploratory Data Analysis
+     │
+     ▼
+Pattern Discovery
+     │
+     ▼
+Business Insights
+     │
+     ▼
+Strategic Recommendations
 
 Key Insights
 
-📍 Pricing Varies Significantly by City
+📍 Metropolitan Markets Show Stronger Pricing Power
 
-Location remains one of the strongest predictors of hotel pricing, highlighting the importance of localized pricing strategies.
+Premium pricing is concentrated in major cities, suggesting stronger demand and greater willingness to pay.
 
-⭐ Customer Ratings Alone Do Not Explain Premium Pricing
+Business implication: Pricing strategies should be tailored by geography rather than applied uniformly.
 
-Higher-rated hotels are not always the most expensive, suggesting pricing decisions depend on multiple commercial factors.
+⭐ Ratings Alone Do Not Explain Premium Pricing
 
-💬 Customer Engagement Creates Competitive Advantage
+Higher-rated hotels are not consistently the most expensive, indicating that factors such as location, brand positioning, and demand also influence price.
 
-Hotels with stronger review activity generally maintain greater visibility and stronger pricing consistency.
+Business implication: Pricing decisions should combine multiple commercial indicators.
 
-💰 Budget & Mid-Market Hotels Dominate
+💬 Customer Engagement Supports Commercial Performance
 
-Most listings fall within affordable and mid-range price bands, representing the largest revenue opportunity by volume.
+Hotels receiving greater customer engagement through reviews generally display stronger pricing consistency.
 
-🏨 Premium Hotels Operate Differently
+Business implication: Customer experience initiatives can indirectly strengthen pricing power.
 
-Luxury hotels follow distinct pricing behaviour and should be managed using separate pricing strategies.
+💰 Mid-Market Properties Represent the Largest Opportunity
 
-Business Recommendations
+The majority of listings fall within affordable and mid-range price segments.
 
-Based on the analysis:
+Business implication: Revenue optimization initiatives in this segment may produce the greatest aggregate impact.
 
-Implement city-specific dynamic pricing.
+Strategic Recommendations
 
-Continuously benchmark competitor pricing.
+Implement city-specific pricing strategies.
 
-Encourage verified customer reviews.
+Monitor competitor pricing continuously.
 
-Design targeted promotional campaigns instead of blanket discounts.
+Increase focus on customer review acquisition.
 
-Prioritize expansion in high-demand markets.
+Replace blanket discounts with targeted promotions.
 
-Monitor pricing elasticity to maximize occupancy without sacrificing profitability.
+Use analytics to support seasonal pricing decisions.
+
+Benchmark pricing by hotel segment and location.
+
+Business Impact
+
+This project illustrates how descriptive analytics can support:
+
+Revenue Management
+
+Dynamic Pricing
+
+Market Expansion Planning
+
+Customer Experience Analysis
+
+Competitive Benchmarking
+
+Executive Decision Support
+
+Repository Structure
+
+OccuRate/
+├── Data/
+├── Notebook/
+├── Images/
+└── README.md
 
 Skills Demonstrated
 
-Technical Skills
+Technical
 
 Python
 
@@ -226,84 +187,44 @@ Matplotlib
 
 Jupyter Notebook
 
-Analytics Skills
+Analytical
 
 Exploratory Data Analysis
 
 Data Cleaning
 
+Statistical Interpretation
+
 Business Analytics
 
-Statistical Analysis
-
-Data Visualization
+Data Storytelling
 
 Insight Generation
 
-Business Storytelling
+Future Enhancements
 
-Repository Structure
+Interactive Power BI dashboard
 
-OccuRate-Hotel-Revenue-Optimization/
----
+Pricing segmentation model
 
-│── Data/
-│   ├── Raw Dataset
-│   └── Clean Dataset
-│
-│── Notebook/
-│   └── Hotel_Revenue_Analysis.ipynb
-│
-│── Images/
-│   ├── Price Distribution
-│   ├── City Comparison
-│   ├── Rating Analysis
-│   ├── Correlation Heatmap
-│   └── Business Insights
-│
-└── README.md
----
+Demand forecasting
 
-Why This Project Matters
+Occupancy prediction
 
-Revenue optimization is no longer driven by intuition alone. Hospitality businesses increasingly rely on analytics to make pricing and operational decisions.
-
-This project demonstrates my ability to:
-
-Translate business problems into analytical questions.
-
-Clean and prepare real-world datasets.
-
-Extract meaningful patterns from data.
-
-Present findings in a stakeholder-friendly format.
-
-Deliver recommendations that support commercial decision-making.
+Revenue optimization simulation
 
 About Me
 
-I'm an aspiring Data Analyst with a background in operations and business process management, transitioning into analytics through projects focused on solving real business problems.
+I'm an aspiring Data Analyst focused on solving business problems through data. My portfolio combines Python, SQL, Power BI, and Excel to deliver stakeholder-focused insights and practical business recommendations.
 
-My portfolio showcases end-to-end analytics using:
+Connect
 
-Python
+If you found this project useful:
 
-SQL
+⭐ Star this repository
 
-Power BI
-
-Excel
-
-with a strong emphasis on business impact, data storytelling, and decision support.
-
-Explore More
-
-If you enjoyed this project, feel free to:
-
-⭐ Star the repository
-
-🍴 Fork it
+🍴 Fork the project
 
 💼 Connect with me on LinkedIn
 
-"Turning raw data into business decisions."
+Turning raw data into business decisions.

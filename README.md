@@ -1,104 +1,158 @@
-# 🏨 Indian Hotel Market Analysis with Python (OYO & all Dataset)
+🏨 OccuRate: Hotel Revenue Optimization & Occupancy Analytics
 
-## 📌 Project Overview
-This project analyzes hotel listings across major Indian cities to uncover patterns in pricing, customer demand, and service quality. Using Python-based exploratory data analysis (EDA), the study identifies key factors influencing hotel performance and provides actionable business recommendations.
+Using Python to identify pricing opportunities, demand patterns, and occupancy optimization strategies across India's hotel market.
 
----
+📌 Project Summary
 
-## 🎯 Objectives
-- Understand hotel price distribution across cities and room types  
-- Analyze relationships between price, ratings, and customer engagement  
-- Identify high-demand locations and pricing patterns  
-- Derive business insights to optimize pricing and occupancy  
+Hotel pricing directly influences occupancy, revenue, and customer acquisition. In this project, I analyzed thousands of hotel listings across major Indian cities to understand how pricing, location, customer ratings, and reviews impact market performance.
 
----
+Using Python and Exploratory Data Analysis (EDA), I transformed raw hotel data into actionable business insights that hotel operators and revenue managers could use to improve pricing strategies, increase occupancy, and maximize revenue.
 
-## 🗂️ Dataset Description
-The dataset contains hotel listing information with the following features:
+This project demonstrates my ability to clean messy datasets, uncover meaningful patterns, and communicate insights that support business decision-making.
 
-- **Price** – Cost per night  
-- **Rating** – Customer rating (1–5 scale)  
-- **Reviews** – Number of customer reviews  
-- **City** – Location of hotel  
-- **Area** – Specific locality within city  
-- **Room Type** – Category (Classic, Deluxe, Suite, etc.)  
-- **Discount** – Discount percentage  
-- **Availability_365** – Availability throughout the year  
+🎯 Business Problem
 
----
+Hotel operators constantly balance two competing objectives:
 
-## ⚙️ Tools & Technologies
-- Python  
-- Pandas  
-- NumPy  
-- Matplotlib  
-- Seaborn  
-- Jupyter Notebook  
+Maximize occupancy
+Maximize revenue per available room
 
----
+Without understanding customer behaviour and pricing trends, hotels risk:
 
-## 🔄 Project Workflow
-1. Data Cleaning & Preprocessing  
-2. Univariate Analysis  
-3. Bivariate Analysis  
-4. Multivariate Analysis  
-5. Advanced Insights & Feature Relationships  
-6. Business Recommendations  
+Overpricing and losing bookings
+Underpricing and sacrificing revenue
+Investing in low-performing markets
+Missing high-demand opportunities
 
----
+This analysis explores the factors that influence hotel performance and identifies opportunities for revenue optimization.
 
-## 📊 Key Visualizations
+📊 Project Objectives
 
-### Price Distribution
-![Price Distribution](images/price_distribution.png)
+The analysis focuses on answering key business questions:
 
-### Average Price by City
-![Price by City](images/price_by_city.png)
+Which cities command the highest hotel prices?
+How do ratings influence pricing?
+Does customer engagement (reviews) impact pricing?
+Which hotel segments dominate the market?
+What pricing patterns exist across locations?
+What strategies can improve occupancy and revenue?
+🛠 Tech Stack
+Python
+Pandas
+NumPy
+Matplotlib
+Jupyter Notebook
+📂 Dataset
 
-### Price vs Rating
-![Price vs Rating](images/price_vs_rating.png)
+The dataset contains hotel listings from major Indian cities, including:
 
-### Reviews vs Price
-![Reviews vs Price](images/reviews_vs_price.png)
+Hotel Price
+Customer Rating
+Review Count
+City
+Area
+Room Type
+Discount Offered
+Availability
+🔄 Analytics Workflow
+1. Data Cleaning
+Missing value handling
+Data type corrections
+Duplicate removal
+Data validation
+2. Exploratory Data Analysis
+Price distribution
+Rating distribution
+Review analysis
+City-wise comparison
+Room type analysis
+3. Relationship Analysis
+Price vs Rating
+Reviews vs Price
+Correlation analysis
+Feature interactions
+4. Business Insights
 
-### Correlation Heatmap
-![Correlation Heatmap](images/correlation_heatmap.png)
+Translate statistical findings into recommendations that support pricing and occupancy decisions.
 
----
+📈 Key Visualizations
 
-## 🔍 Key Insights
+(Keep your existing images here.)
 
-- Hotel pricing is strongly influenced by **city and room type**, with metro cities commanding higher prices  
-- The market is dominated by **budget and mid-range hotels**, indicating high demand in these segments  
-- **Moderate pricing combined with strong ratings** leads to higher customer engagement  
-- Price shows **weak correlation with ratings**, suggesting value perception matters more than cost  
-- Discounts are primarily applied in **mid-tier segments** to drive bookings  
-- Premium listings exist as **outliers**, representing a niche luxury market  
-- Demand is concentrated in **high-access areas** such as city centers and transit zones  
+Price Distribution
+Average Price by City
+Price vs Rating
+Reviews vs Price
+Correlation Heatmap
+🔍 Key Findings
+City Drives Pricing
 
----
+Hotels located in metropolitan cities consistently command premium pricing due to stronger demand.
 
-## 💡 Business Recommendations
+Customer Ratings Alone Don't Justify Premium Prices
 
-- Focus on expanding **mid-range hotel offerings** to capture the largest demand segment  
-- Implement **city-specific pricing strategies** based on demand and competition  
-- Adopt a **value-based pricing model** rather than premium-only positioning  
-- Use **targeted discounts in mid-tier segments** to increase occupancy  
-- Invest in **high-demand areas** for better revenue potential  
-- Encourage **customer reviews and engagement** to improve visibility  
-- Treat **premium listings separately** with distinct pricing and marketing strategies  
+Higher ratings do not always translate into significantly higher prices, suggesting customer value perception extends beyond review scores.
 
----
+Budget & Mid-Market Hotels Dominate
 
-## 📈 Conclusion
-The analysis highlights that hotel market performance is driven by a combination of pricing, location, and customer perception. A strategic approach focusing on mid-range offerings, optimized pricing, and customer engagement can significantly enhance both demand and revenue.
+Most listings fall within affordable and mid-range pricing, indicating that this segment represents the largest market opportunity.
 
----
+Customer Engagement Matters
 
-👨‍💻 Author
+Hotels with stronger customer engagement (reviews) generally achieve better market visibility and pricing consistency.
 
-Yusuf M
+Premium Segment Is Niche
 
-Aspiring Data Analyst | Python | SQL | Power BI
+Luxury hotels represent a relatively small proportion of listings but operate under different pricing dynamics than the broader market.
 
-⭐ If you found this project useful, consider giving it a star!
+💼 Business Recommendations
+
+Based on the analysis:
+
+Implement city-specific pricing strategies rather than a uniform pricing model.
+Focus inventory expansion on high-demand metropolitan markets.
+Use targeted discounts instead of blanket promotions.
+Strengthen customer review generation initiatives.
+Continuously monitor competitor pricing to optimize occupancy.
+Differentiate premium offerings instead of competing solely on price.
+🎯 Skills Demonstrated
+Exploratory Data Analysis (EDA)
+Data Cleaning
+Feature Analysis
+Business Analytics
+Statistical Interpretation
+Data Visualization
+Insight Generation
+Business Storytelling
+📁 Repository Structure
+Data/
+│
+├── oyo_india_hotels_raw.csv
+├── oyo_india_hotels_cleaned.csv
+
+Python_Notebook/
+│
+└── Indian_Hotels_Analysis.ipynb
+
+images/
+│
+├── price_distribution.png
+├── price_by_city.png
+├── price_vs_rating.png
+├── reviews_vs_price.png
+└── correlation_heatmap.png
+👨‍💻 About Me
+
+I'm an aspiring Data Analyst passionate about transforming raw data into business insights. My projects focus on solving real-world business problems using Python, SQL, Excel, and Power BI, with an emphasis on clear storytelling and decision support.
+
+Tech Stack
+
+Python
+SQL
+Power BI
+Excel
+Pandas
+Data Visualization
+Business Analytics
+
+⭐ If you found this project helpful or interesting, consider giving it a star.
